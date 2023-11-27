@@ -27,7 +27,7 @@ const Footer = () => {
                     letterSpacing: '3px',
                 }}
             >
-                Indian Coderz
+                Driver Sync
             </Typography>
             
             <Typography
@@ -89,7 +89,7 @@ const Footer = () => {
                     letterSpacing: 'wide',
                 }}
             >
-                Copyright © Indian Coderz 2023. All rights reserved.
+                Copyright © Driver Sync 2023. All rights reserved.
             </Typography>
         </Box>
     );

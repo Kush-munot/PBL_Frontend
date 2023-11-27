@@ -175,7 +175,7 @@ export default function Appbar(props) {
                                         width: "380px",
                                     }}
                                 >
-                                    Indian Coderz
+                                    Driver Sync
                                 </Typography>
                             </Grid>
                         </a>
@@ -211,7 +211,7 @@ export default function Appbar(props) {
                                         ml: 2,
                                     }}
                                 >
-                                    Indian Coderz
+                                    Driver Sync
                                 </Typography>
                             </Grid>
                         </a>
