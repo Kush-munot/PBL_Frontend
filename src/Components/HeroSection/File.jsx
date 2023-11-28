@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Button, Input, Typography } from '@mui/material';
+import  { useState } from 'react';
+import { Button, Grid, Input, Typography } from '@mui/material';
 import axios from 'axios';
+import Reveal from '../Animation/Reveal';
 
 const FileUploadExample = () => {
     const [file, setFile] = useState(null);
@@ -32,19 +33,51 @@ const FileUploadExample = () => {
         }
     };
 
+    const heroTextBig = {
+        fontFamily: 'Blanka',
+        fontSize: 48,
+        fontWeight: 700,
+        background: "-webkit-linear-gradient(45deg, #FF3366 30%, #FF9933 90%)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        marginBottom: '20px',
+        letterSpacing: '0.2rem',
+        "@media (max-width: 1000px)": {
+            fontSize: 22
+        }
+    }
+
     return (
-        <div>
-            <Input type="file" id="fileInput" onChange={handleFileChange} />
-            <Button variant="contained" onClick={uploadFile}>
-                Upload
-            </Button>
-            <Typography variant="body1">
-                {data.name && `Name: ${data.name}`}
-            </Typography>
-            <Typography variant="body1">
-                {data.numberPlate && `Number Plate: ${data.numberPlate}`}
-            </Typography>
-        </div>
+        <div id='try'>
+            <Grid container spacing={2}>
+                <Grid item lg={8} md={8} xs={12} align="center">
+                    <Reveal>
+                        {/* <Typography sx={heroText}>Unlock Your <Typography style={heroTextBig}>Coding Potential</Typography></Typography> */}
+                        <div>
+                            <Typography sx={heroTextBig}>
+                                Try The Model Demo Now !!
+                            </Typography>
+
+                        </div>
+                    </Reveal>
+                </Grid>
+                <Grid item lg={8} md={8} xs={12} align="center">
+                    <Input type="file" id="fileInput" onChange={handleFileChange} />
+                    <br />
+                    <Button variant="contained" color="success" onClick={uploadFile} sx={{ marginTop: '20px' }} >
+                        Upload
+                    </Button>
+                </Grid>
+                <Grid item lg={4} md={4} xs={12} align="center">
+                    <Typography variant="body1">
+                        {data.name && `Name: ${data.name}`}
+                    </Typography>
+                    <Typography variant="body1">
+                        {data.numberPlate && `Number Plate: ${data.numberPlate}`}
+                    </Typography>
+                </Grid>
+            </Grid>
+        </div >
     );
 };
 

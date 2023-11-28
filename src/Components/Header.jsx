@@ -9,9 +9,8 @@ import {
     Divider,
     Toolbar,
     Drawer,
-    Link
 } from "@mui/material";
-// import { Link } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 import MenuIcon from "@mui/icons-material/Menu";
 
 const btn = {
@@ -67,24 +66,12 @@ const links = ["/leaderboard", "/login", "https://collegewit.netlify.app/"]; */
 
 const data = [
     {
-        title: "Leaderboard",
-        link: '/leaderboard'
+        title: "Try Now",
+        link: '#try'
     },
     {
-        title: "Register",
-        link: '/register'
-    },
-    {
-        title: "Edit Profile",
-        link: '/editDetails'
-    },
-    {
-        title: "Report",
-        link: '/report'
-    },
-    {
-        title: "CollegeWit",
-        link: 'https://collegewit.netlify.app/'
+        title: "Features",
+        link: '#features'
     },
 ]
 
@@ -163,8 +150,8 @@ export default function Appbar(props) {
                         </Grid>
                     </Button >
                     <Grid>
-                        <a href='/'  style={{ textDecoration: "none", color: "black" }}>
-                            <Grid xs={11} sx={{display: { md: "none" }, alignItems:'center'}}>
+                        <a href='/' style={{ textDecoration: "none", color: "black" }}>
+                            <Grid xs={11} sx={{ display: { md: "none" }, alignItems: 'center' }}>
                                 <Typography
                                     sx={{
                                         color: "#915831",
@@ -219,7 +206,7 @@ export default function Appbar(props) {
                         <Grid sx={{ marginLeft: '29%' }}>
                             {data.map((button) => (
                                 <Link
-                                    href={button.link}
+                                    to={button.link}
                                     key={button}
                                     style={{ textDecoration: "none", color: "black" }}
                                 >
