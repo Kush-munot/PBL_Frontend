@@ -2,7 +2,7 @@ import { Grid, Typography } from '@mui/material';
 import Reveal from '../Animation/Reveal';
 import Lottie from "lottie-react";
 import PeopleLottie from '../../assets/People.json'
-import File from './File'
+import File from './File1'
 import FaceRecog from '../../assets/FaceRecog.json'
 import Database from '../../assets/Database.json'
 import Secure from '../../assets/Secure.json'
