@@ -37,7 +37,7 @@ function encode() {
             let canvas = document.getElementById('canvas');
             let ctx = canvas.getContext('2d');
             let imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-            encodeMessage(imgData.data, message);
+            encodeImage(imgData.data, message);
             ctx.putImageData(imgData, 0, 0);
             alert('Image encoded!\n Save below image for further use!');
             output.src = canvas.toDataURL();
@@ -52,13 +52,12 @@ function encode() {
 function decode() {
     let ctx = document.getElementById('canvas').getContext('2d');
     let imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-    let message = decodeMessage(imgData.data);
-    // alert("The message encode is:\n" + message);
+    let message = decodeImageData(imgData.data);
     return message;
 };
 
 // Encodes message using LSB method
-function encodeMessage(colors, message) {
+function encodeImage(colors, message) {
     let messageBits = getBitsFromNumber(message.length);
     messageBits = messageBits.concat(getMessageBits(message));
     let history = [];
@@ -75,7 +74,7 @@ function encodeMessage(colors, message) {
 };
 
 // Decodes message from the image
-function decodeMessage(colors) {
+function decodeImageData(colors) {
     let history = [];
     let messageSize = getNumberFromBits(colors, history);
     if ((messageSize + 1) * 16 > colors.length * 0.75) {

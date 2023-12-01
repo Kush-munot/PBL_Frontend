@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import { loadImage } from '../steganography';
+import { loadImage } from '../middlemware';
 
 export default function UploadButton() {
     return (

@@ -1,7 +1,4 @@
-
-
 import { Box, Typography, Button, Link } from "@mui/material";
-
 
 const Footer = () => {
     return (
@@ -42,7 +39,8 @@ const Footer = () => {
                     letterSpacing: 'wide',
                 }}
             >
-                Made with 💚 and 🧠 by <Link sx={{ margin: '0 10px' }} href="https://kushmunot.netlify.app/let's-connect">
+                Made with 💚 and 🧠 by 
+                <Link sx={{ margin: '0 10px' }} href="https://kushmunot.netlify.app/let's-connect">
                     <Button sx={{
                         background: "linear-gradient(45deg, #FF3366 30%, #FF9933 90%)",
                         borderRadius: "5px",
@@ -57,23 +55,6 @@ const Footer = () => {
                             boxShadow: "0 6px 10px 4px rgba(255, 51, 102, 0.3)",
                         },
                     }} > Kush </Button>
-                </Link>
-                and
-                <Link sx={{ margin: '0 10px' }} href="https://pratham-rajbhoj.netlify.app/">
-                    <Button sx={{
-                        background: "linear-gradient(45deg, #FF3366 30%, #FF9933 90%)",
-                        borderRadius: "5px",
-                        border: 0,
-                        color: "white",
-                        textTransform: 'none',
-                        fontSize: '1.2rem',
-                        padding: "0px 15px",
-                        boxShadow: "0 3px 5px 2px rgba(255, 51, 102, 0.3)",
-                        transition: "box-shadow 0.3s ease-in-out",
-                        "&:hover": {
-                            boxShadow: "0 6px 10px 4px rgba(255, 51, 102, 0.3)",
-                        },
-                    }}>Pratham</Button>
                 </Link>
             </Typography>
 

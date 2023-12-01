@@ -39,7 +39,7 @@
 import React, { useState } from 'react';
 import { Button, Grid, TextField } from '@material-ui/core';
 import UploadButton from './UploadButton.jsx';
-import { encode, decode } from '../steganography.js';
+import { encode, decode } from '../middlemware.js';
 import Reveal from '../Animation/Reveal.jsx';
 import { Typography } from '@mui/material';
 
@@ -60,13 +60,15 @@ export default function File1() {
 
     async function handleDecode() {
         const decoded = await decode();
-        setDecodedMessage(decoded);
+        setTimeout(() => {
+            setDecodedMessage(decoded);
+        }, 4000)
     }
 
     return (
         <div id='try'>
-            <Grid container spacing={2}>
-                <Grid item lg={12} md={12} xs={12} align="center">
+            <Grid container>
+                <Grid lg={12} md={12} xs={12} align="center">
                     <Reveal>
                         {/* <Typography sx={heroText}>Unlock Your <Typography style={heroTextBig}>Coding Potential</Typography></Typography> */}
                         <div>
@@ -89,9 +91,10 @@ export default function File1() {
                         </div>
                     </Reveal>
                 </Grid>
-                <Grid item lg={10} md={10} xs={10} align="center">
+                <Grid item lg={12} md={12} xs={12} align="center">
 
                     <canvas id="canvas" style={{ height: '300px', width: '500px' }}></canvas>
+                    <br />
                     {option === 'home' && <Button style={{ margin: '1rem' }} name='decode' onClick={handleClick} variant="contained">Try Now !!</Button>}
                     {option !== 'home' && <UploadButton />}
                     {option === 'decode' && <Button style={{ margin: '1rem' }} onClick={handleDecode} variant="contained">Check Now</Button>}
