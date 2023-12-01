@@ -93,7 +93,7 @@ export default function File1() {
                 </Grid>
                 <Grid item lg={12} md={12} xs={12} align="center">
 
-                    <canvas id="canvas" style={{ height: '300px', width: '500px' }}></canvas>
+                    <canvas id="canvas" style={{ height: '500px', width: '300px' }}></canvas>
                     <br />
                     {option === 'home' && <Button style={{ margin: '1rem' }} name='decode' onClick={handleClick} variant="contained">Try Now !!</Button>}
                     {option !== 'home' && <UploadButton />}
